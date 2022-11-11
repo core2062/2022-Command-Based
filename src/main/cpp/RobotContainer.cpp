@@ -13,6 +13,9 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem) {
 
 void RobotContainer::ConfigureButtonBindings() {
   // Configure your button bindings here
+  m_driveSubsystem.SetDefaultCommand(TeleopEtherDrive(&m_driveSubsystem, 
+                                                      [this] {return -m_driveController.GetRawAxis(1); },
+                                                      [this] {return m_driveController.GetRawAxis(2); }));
 }
 
 frc2::Command* RobotContainer::GetAutonomousCommand() {

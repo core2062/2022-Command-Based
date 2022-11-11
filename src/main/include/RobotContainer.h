@@ -7,7 +7,9 @@
 #include <frc2/command/Command.h>
 
 #include "commands/ExampleCommand.h"
+#include "commands/TeleopEtherDrive.h"
 #include "subsystems/ExampleSubsystem.h"
+#include "subsystems/DriveSubsystem.h"
 
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -23,8 +25,14 @@ class RobotContainer {
   frc2::Command* GetAutonomousCommand();
 
  private:
+
+  frc::Joystick m_driveController{0};
+  frc::Joystick m_operatorController{1};
+
   // The robot's subsystems and commands are defined here...
   ExampleSubsystem m_subsystem;
+  DriveSubsystem m_driveSubsystem;
+
   ExampleCommand m_autonomousCommand;
 
   void ConfigureButtonBindings();
