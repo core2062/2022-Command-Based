@@ -4,7 +4,11 @@
 
 #include "RobotContainer.h"
 
-RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem) {
+RobotContainer::RobotContainer() : 
+  m_driverDPadN(&m_driveController,0,0),
+  m_driverDPadS(&m_driveController,180,0),
+  m_driverYButton(&m_driveController,4),
+  m_autonomousCommand(&m_subsystem) {
   // Initialize all of your commands and subsystems here
 
   // Configure the button bindings
@@ -16,6 +20,10 @@ void RobotContainer::ConfigureButtonBindings() {
   m_driveSubsystem.SetDefaultCommand(TeleopEtherDrive(&m_driveSubsystem, 
                                                       [this] {return -m_driveController.GetRawAxis(1); },
                                                       [this] {return m_driveController.GetRawAxis(2); }));
+
+  m_driverDPadN.WhenHeld(new ClimbMotorCommand(&m_climberSubsystem,1));
+  m_driverDPadS.WhenHeld(new ClimbMotorCommand(&m_climberSubsystem,-1));
+  m_driverYButton.WhenPressed(new ClimbSolenoidCommand(&m_climberSubsystem));
 }
 
 frc2::Command* RobotContainer::GetAutonomousCommand() {

@@ -5,11 +5,17 @@
 #pragma once
 
 #include <frc2/command/Command.h>
+#include <frc2/command/button/JoystickButton.h>
+#include <frc2/command/button/POVButton.h>
 
 #include "commands/ExampleCommand.h"
 #include "commands/TeleopEtherDrive.h"
+#include "commands/ClimbMotorCommand.h"
+#include "commands/ClimbSolenoidCommand.h"
+
 #include "subsystems/ExampleSubsystem.h"
 #include "subsystems/DriveSubsystem.h"
+#include "subsystems/ClimberSubsystem.h"
 
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -25,13 +31,17 @@ class RobotContainer {
   frc2::Command* GetAutonomousCommand();
 
  private:
-
+  // Joysticks
   frc::Joystick m_driveController{0};
   frc::Joystick m_operatorController{1};
+  // Joystick Buttons in use
+  frc2::POVButton m_driverDPadN,m_driverDPadS;
+  frc2::JoystickButton m_driverYButton;
 
   // The robot's subsystems and commands are defined here...
   ExampleSubsystem m_subsystem;
   DriveSubsystem m_driveSubsystem;
+  ClimberSubsystem m_climberSubsystem;
 
   ExampleCommand m_autonomousCommand;
 

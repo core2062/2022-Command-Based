@@ -7,14 +7,14 @@
 #include "subsystems/DriveSubsystem.h"
 
 TeleopEtherDrive::TeleopEtherDrive(
-    DriveSubsystem* subsystem, std::function<double()> xaxisSpeedSupplier,
-    std::function<double()> zaxisRotateSuppplier)
+    DriveSubsystem* subsystem, std::function<double()> xAxisSpeedSupplier,
+    std::function<double()> yAxisRotateSuppplier)
     : m_drive{subsystem},
-      m_xaxisSpeedSupplier{xaxisSpeedSupplier},
-      m_zaxisRotateSupplier{zaxisRotateSuppplier} {
+      m_xAxisSpeedSupplier{xAxisSpeedSupplier},
+      m_yAxisRotateSupplier{yAxisRotateSuppplier} {
   AddRequirements({subsystem});
 }
 
 void TeleopEtherDrive::Execute() {
-  m_drive->CalculateMotorSpeeds(m_xaxisSpeedSupplier(), m_zaxisRotateSupplier());
+  m_drive->CalculateMotorSpeeds(m_xAxisSpeedSupplier(), m_yAxisRotateSupplier());
 }

@@ -13,12 +13,12 @@ class TeleopEtherDrive
     : public frc2::CommandHelper<frc2::CommandBase, TeleopEtherDrive> {
  public:
   TeleopEtherDrive(DriveSubsystem* subsystem,
-                    std::function<double()> xaxisSpeedSupplier,
-                    std::function<double()> zaxisRotateSupplier);
+                  std::function<double()> xAxisSpeedSupplier,
+                  std::function<double()> yAxisRotateSupplier);
   void Execute() override;
 
  private:
   DriveSubsystem* m_drive;
-  std::function<double()> m_xaxisSpeedSupplier;
-  std::function<double()> m_zaxisRotateSupplier;
+  std::function<double()> m_xAxisSpeedSupplier;
+  std::function<double()> m_yAxisRotateSupplier;
 };
