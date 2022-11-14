@@ -6,12 +6,13 @@
 
 #include <frc2/command/SubsystemBase.h>
 #include <frc/Compressor.h>
-#include <frc/Preferences.h>
 #include <ctre/Phoenix.h>
 #include <CORERobotLib.h>
 #include <COREUtilities/COREConstant.h>
 #include <COREDrive/COREEtherDrive.h>
 #include <AHRS.h>
+
+#include "Constants.h"
 
 using namespace CORE;
 using namespace frc;
@@ -33,21 +34,41 @@ class DriveSubsystem : public frc2::SubsystemBase {
    */
   void SimulationPeriodic() override;
   
+  /**
+   * Uses args to calculate motor speeds with Ether drive
+   * @param mag Y Axis
+   * @param rot X Axis
+   */
 	void CalculateMotorSpeeds(double mag, double rot);
-	void SetMotorSpeed(double speedInFraction, DriveSide whichSide);
+
+  /**
+   * Primarily used to take in the calculated values from Ether drive to call SetMotorSpeed(double speedInFraction, DriveSide whichSide)
+   */
 	void SetMotorSpeed(double leftPercent, double rightPercent);
+
+  /**
+   * Sets the speed of the motors
+   */
+	void SetMotorSpeed(double speedInFraction, DriveSide whichSide);
+  
+  /**
+   * Returns the encoder value of the m_rightPrimary Talon
+   */
   double GetRobotPosition();
+
 	void InitTalons();
+
+  /**
+   * Used to toggle between Coast and Brake mode of the Talons
+   */
 	void SetTalonMode(NeutralMode mode);
 
 	AHRS ahrs{SPI::Port::kMXP};
 
  private:
-  TalonFX m_leftPrimary{1}, m_leftSecondary{2}, m_rightPrimary{3}, m_rightSecondary{4};
+  TalonFX m_leftPrimary, m_leftSecondary, m_rightPrimary, m_rightSecondary;
 
   COREConstant<double> m_etherAValue, m_etherBValue, m_etherQuickTurnValue, m_ticksPerInch, m_driveSpeedModifier;
 
   Compressor m_compressor{frc::PneumaticsModuleType::REVPH};
-  // Components (e.g. motor controllers and sensors) should generally be
-  // declared private and exposed only through public methods.
 };
