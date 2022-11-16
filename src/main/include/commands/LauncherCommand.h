@@ -7,28 +7,28 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 
-#include "subsystems/ClimberSubsystem.h"
+#include "subsystems/LauncherSubsystem.h"
 
 /**
  * <p>Note that this extends CommandHelper, rather extending CommandBase
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class ClimbMotorCommand
-    : public frc2::CommandHelper<frc2::CommandBase, ClimbMotorCommand> {
+class LauncherCommand
+    : public frc2::CommandHelper<frc2::CommandBase, LauncherCommand> {
  public:
   /**
-   * Creates a new ClimbMotorCommand.
+   * Creates a new LauncherCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit ClimbMotorCommand(ClimberSubsystem* subsystem,
-                            int climberDirection);
+  explicit LauncherCommand(LauncherSubsystem* subsystem,
+                            int launcherDirection);
 
   void Execute() override;
   void End(bool interrupted) override;
 
  private:
-  ClimberSubsystem* m_subsystem;
-  int m_climberDirection;
+  LauncherSubsystem* m_subsystem;
+  int m_launcherDirection;
 };
