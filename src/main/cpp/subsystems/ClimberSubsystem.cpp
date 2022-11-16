@@ -37,5 +37,5 @@ void ClimberSubsystem::ToggleClimberPin()
   {
     m_climberSolenoid.Set(DoubleSolenoid::Value::kReverse);
   }
-  m_climberPin != m_climberPin;
+  m_climberPin = !m_climberPin;
 }
