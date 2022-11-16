@@ -11,6 +11,7 @@ RobotContainer::RobotContainer() :
   m_operatorAButton(&m_operatorController,1),
   m_operatorRightButton(&m_operatorController,6),
   m_operatorRightTrigger(&m_operatorController,25),
+  m_operatorLeftTrigger(&m_operatorController,24),
   m_autonomousCommand(&m_subsystem) {
   // Initialize all of your commands and subsystems here
 
@@ -30,6 +31,7 @@ void RobotContainer::ConfigureButtonBindings() {
   m_operatorAButton.WhenPressed(new IntakeSolenoidCommand(&m_intakeSubsystem));
   m_operatorRightButton.WhenPressed(new IntakeMotorCommand(&m_intakeSubsystem, -1));
   m_operatorRightTrigger.WhenPressed(new IntakeMotorCommand(&m_intakeSubsystem, 1));
+  m_operatorLeftTrigger.WhenPressed(new LauncherCommand(&m_launcherSubsystem, 1));
 }
 
 frc2::Command* RobotContainer::GetAutonomousCommand() {
