@@ -20,4 +20,7 @@ void ConveyorSubsystem::SimulationPeriodic() {
   // Implementation of subsystem simulation periodic method goes here.
 }
 
-void 
+void ConveyorSubsystem::SetConveyorSpeed(int direction)
+{
+
+}
