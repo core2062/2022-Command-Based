@@ -5,6 +5,7 @@
 #pragma once
 
 #include <frc2/command/SubsystemBase.h>
+#include <frc/DoubleSolenoid.h>
 #include <ctre/Phoenix.h>
 #include <CORERobotLib.h>
 
@@ -26,13 +27,25 @@ class ConveyorSubsystem : public frc2::SubsystemBase {
    * simulation.
    */
   void SimulationPeriodic() override;
-
+  
+  /**
+   * Sets the conveyor speed
+   * @param direction 1,-1, or 0; Multiplies to the speed to control the conveyor movement
+   */
   void SetConveyorSpeed(int direction);
+  
+  /**
+   * Sets the speed of the feed
+   * @param direction 1,-1, or 0; Multiplies to the speed to control the conveyor movement
+   */
+  void SetFeedSpeed(int direction);
+  
+  void ToggleConveyorPunch();
 
-  COREConstant<double> conveyorForwardSpeed,conveyorReverseSpeed;
+  COREConstant<double> conveyorForwardSpeed, conveyorReverseSpeed, conveyorFeedSpeed;
 
  private:
-  TalonSRX m_conveyorTalon;  
-  // Components (e.g. motor controllers and sensors) should generally be
-  // declared private and exposed only through public methods.
+  TalonSRX m_conveyorTalon, m_rightFeed, m_leftFeed;
+  DoubleSolenoid m_conveyorPunch;
+  bool m_conveyorPiston;
 };
