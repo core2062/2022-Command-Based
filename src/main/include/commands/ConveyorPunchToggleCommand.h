@@ -9,21 +9,19 @@
 
 #include "subsystems/ConveyorSubsystem.h"
 
-class ConveyorFeedCommand
-    : public frc2::CommandHelper<frc2::CommandBase, ConveyorFeedCommand> {
- public:
+class ConveyorPunchToggleCommand
+    : public frc2::CommandHelper<frc2::CommandBase, ConveyorPunchToggleCommand> {
+  public:
   /**
-   * Creates a new ConveyorFeedCommand.
+   * Creates a new ConveyorPunchToggleCommand.
    *
    * @param subsystem The subsystem used by this command.
-   * 
-   * @param feedDirection direction to feed
    */
-  explicit ConveyorFeedCommand(ConveyorSubsystem* subsystem, int feedDirection);
+  explicit ConveyorPunchToggleCommand(ConveyorSubsystem* subsystem, bool punched);
 
   void Execute() override;
 
- private:
-  ConveyorSubsystem* m_subsystem;
-  int m_feedDirection;
+  private:
+   ConveyorSubsystem* m_subsystem;
+   bool m_punched;
 };

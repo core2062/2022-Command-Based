@@ -9,6 +9,7 @@ RobotContainer::RobotContainer() :
   m_driverDPadS(&m_driveController,180,0),
   m_driverYButton(&m_driveController,4),
   m_operatorAButton(&m_operatorController,1),
+  m_operatorBButton(&m_operatorController,2), // idk if this is B or not may have to change eventually
   m_operatorRightButton(&m_operatorController,6),
   m_operatorRightTrigger(&m_operatorController,25),
   m_operatorLeftTrigger(&m_operatorController,24),
@@ -28,7 +29,9 @@ void RobotContainer::ConfigureButtonBindings() {
   m_driverDPadN.WhenHeld(new ClimbMotorCommand(&m_climberSubsystem,1));
   m_driverDPadS.WhenHeld(new ClimbMotorCommand(&m_climberSubsystem,-1));
   m_driverYButton.WhenPressed(new ClimbSolenoidCommand(&m_climberSubsystem));
+
   m_operatorAButton.WhenPressed(new IntakeSolenoidCommand(&m_intakeSubsystem));
+  m_operatorBButton.WhenPressed(new LaunchBallCommandGroup(&m_conveyorSubsystem));
   m_operatorRightButton.WhenPressed(new IntakeMotorCommand(&m_intakeSubsystem, -1));
   m_operatorRightTrigger.WhenPressed(new IntakeMotorCommand(&m_intakeSubsystem, 1));
   m_operatorLeftTrigger.WhenPressed(new LauncherCommand(&m_launcherSubsystem, 1));

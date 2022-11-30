@@ -12,8 +12,3 @@ void ConveyorFeedCommand::Execute()
 {
     m_subsystem->SetFeedSpeed(m_feedDirection);
 }
-
-void ConveyorFeedCommand::End(bool interupted)
-{
-    m_subsystem->SetFeedSpeed(0);
-}

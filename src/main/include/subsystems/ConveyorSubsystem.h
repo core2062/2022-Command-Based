@@ -42,6 +42,13 @@ class ConveyorSubsystem : public frc2::SubsystemBase {
   
   void ToggleConveyorPunch();
 
+  /**
+   * Sets the punch T/F
+   * 
+   * @param punched True = Extended; False = Retracted
+   */
+  void SetConveyorPunch(bool punched);
+
   COREConstant<double> conveyorForwardSpeed, conveyorReverseSpeed, conveyorFeedSpeed;
 
  private:

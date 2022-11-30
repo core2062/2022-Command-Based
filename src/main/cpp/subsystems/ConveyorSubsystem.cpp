@@ -67,3 +67,13 @@ void ConveyorSubsystem::ToggleConveyorPunch()
     }
     m_conveyorPiston = !m_conveyorPiston;
 }
+
+void ConveyorSubsystem::SetConveyorPunch(bool punched)
+{
+  if(punched)
+    m_conveyorPunch.Set(DoubleSolenoid::Value::kForward);
+  else
+    m_conveyorPunch.Set(DoubleSolenoid::Value::kReverse);
+  
+  m_conveyorPiston = punched;
+}

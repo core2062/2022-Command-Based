@@ -5,7 +5,7 @@
 #include "commands/ConveyorPunchCommand.h"
 
 ConveyorPunchCommand::ConveyorPunchCommand(ConveyorSubsystem* subsystem)
-    : m_subsystem{subsystem} {}
+    : m_subsystem{subsystem}{}
 
 void ConveyorPunchCommand::Execute()
 {
