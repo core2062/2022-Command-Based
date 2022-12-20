@@ -12,7 +12,7 @@ IntakeSubsystem::IntakeSubsystem() :
   //Implementation of subsystem constructor goes here.
   m_intakePiston = false;
   m_intakeTalon.SetNeutralMode(NeutralMode::Brake);
-
+  double Piston = 1;
 }
 
 void IntakeSubsystem::Periodic() {
@@ -38,4 +38,16 @@ void IntakeSubsystem::ToggleIntakePiston()
         m_intakeSolenoid.Set(DoubleSolenoid::Value::kReverse);
     }
     m_intakePiston = !m_intakePiston;
+/*
+    if (Piston = 1)
+    {
+        m_intakeSolenoid.Set(DoubleSolenoid::Value::kForward);
+        Piston = 2
+    }
+    else
+    {
+        m_intakeSolenoid.Set(DoubleSolenoid::Value::kReverse);
+        Piston = 1
+    }
+    */
 }

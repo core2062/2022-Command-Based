@@ -23,8 +23,8 @@ RobotContainer::RobotContainer() :
 void RobotContainer::ConfigureButtonBindings() {
   // Configure your button bindings here
   m_driveSubsystem.SetDefaultCommand(TeleopEtherDrive(&m_driveSubsystem, 
-                                                      [this] {return -m_driveController.GetRawAxis(1); },
-                                                      [this] {return m_driveController.GetRawAxis(2); }));
+                                                      [this] {return m_driveController.GetRawAxis(4); },
+                                                      [this] {return -m_driveController.GetRawAxis(1); }));
 
   m_driverDPadN.WhenHeld(new ClimbMotorCommand(&m_climberSubsystem,1));
   m_driverDPadS.WhenHeld(new ClimbMotorCommand(&m_climberSubsystem,-1));

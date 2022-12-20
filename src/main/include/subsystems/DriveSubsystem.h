@@ -10,7 +10,7 @@
 #include <CORERobotLib.h>
 #include <COREUtilities/COREConstant.h>
 #include <COREDrive/COREEtherDrive.h>
-#include <AHRS.h>
+// #include <AHRS.h>
 
 #include "Constants.h"
 
@@ -63,7 +63,7 @@ class DriveSubsystem : public frc2::SubsystemBase {
    */
 	void SetTalonMode(NeutralMode mode);
 
-	AHRS ahrs{SPI::Port::kMXP};
+	// AHRS ahrs{SPI::Port::kMXP};
 
  private:
   TalonFX m_leftPrimary, m_leftSecondary, m_rightPrimary, m_rightSecondary;

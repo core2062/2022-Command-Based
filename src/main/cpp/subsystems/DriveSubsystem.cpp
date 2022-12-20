@@ -25,7 +25,7 @@ void DriveSubsystem::Periodic() {
  	// Implementation of subsystem periodic method goes here.
 	SmartDashboard::PutNumber("Left side encoder", m_leftPrimary.GetSelectedSensorPosition(0));
 	SmartDashboard::PutNumber("Right side encoder", m_rightPrimary.GetSelectedSensorPosition(0));
-	SmartDashboard::PutNumber("Robot Heading", ahrs.GetFusedHeading());
+	// SmartDashboard::PutNumber("Robot Heading", ahrs.GetFusedHeading());
 }
 
 void DriveSubsystem::SimulationPeriodic() {
