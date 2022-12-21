@@ -15,6 +15,7 @@ ConveyorSubsystem::ConveyorSubsystem() :
 {
   m_conveyorPunch.Set(DoubleSolenoid::Value::kForward);
   // Implementation of subsystem constructor goes here.
+  double conveyerPiston = 1;
 }
 
 void ConveyorSubsystem::Periodic() {
@@ -57,6 +58,7 @@ void ConveyorSubsystem::SetFeedSpeed(int direction) {
 
 void ConveyorSubsystem::ToggleConveyorPunch()
 {
+  ///*
     if (m_conveyorPiston)
     {
         m_conveyorPunch.Set(DoubleSolenoid::Value::kForward);
@@ -66,6 +68,21 @@ void ConveyorSubsystem::ToggleConveyorPunch()
         m_conveyorPunch.Set(DoubleSolenoid::Value::kReverse);
     }
     m_conveyorPiston = !m_conveyorPiston;
+    //*/
+
+    /*
+     if (conveyerPiston != 1)
+    {
+        m_conveyorPunch.Set(DoubleSolenoid::Value::kForward);
+        conveyerPiston = 1;
+    }
+    else
+    {
+        m_conveyorPunch.Set(DoubleSolenoid::Value::kReverse);
+        conveyerPiston = 2;
+    }
+    m_conveyorPiston = !m_conveyorPiston;
+    */
 }
 
 void ConveyorSubsystem::SetConveyorPunch(bool punched)

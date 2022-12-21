@@ -19,7 +19,7 @@ class ConveyorFeedCommand
    * 
    * @param feedDirection direction to feed
    */
-  explicit ConveyorFeedCommand(ConveyorSubsystem* subsystem, int feedDirection);
+  explicit ConveyorFeedCommand(ConveyorSubsystem* subsystem, double feedDirection);
 
   void Execute() override;
 

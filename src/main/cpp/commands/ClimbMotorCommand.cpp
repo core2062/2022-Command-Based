@@ -4,7 +4,7 @@
 
 #include "commands/ClimbMotorCommand.h"
 
-ClimbMotorCommand::ClimbMotorCommand(ClimberSubsystem* subsystem, int climberDirection)
+ClimbMotorCommand::ClimbMotorCommand(ClimberSubsystem* subsystem, double climberDirection)
     : m_subsystem{subsystem},
     m_climberDirection{climberDirection} {}
 

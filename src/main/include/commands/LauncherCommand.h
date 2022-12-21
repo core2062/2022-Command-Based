@@ -23,7 +23,7 @@ class LauncherCommand
    * @param subsystem The subsystem used by this command.
    */
   explicit LauncherCommand(LauncherSubsystem* subsystem,
-                            int launcherDirection);
+                            double launcherDirection);
 
   void Execute() override;
   void End(bool interrupted) override;

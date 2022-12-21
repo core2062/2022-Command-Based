@@ -17,10 +17,11 @@ class IntakeSolenoidCommand
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit IntakeSolenoidCommand(IntakeSubsystem* subsystem);
+  explicit IntakeSolenoidCommand(IntakeSubsystem* subsystem, bool toggled);
 
   void Execute() override;
 
   private:
    IntakeSubsystem* m_subsystem;
+   bool m_toggled;
 };

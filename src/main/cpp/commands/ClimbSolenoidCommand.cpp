@@ -4,10 +4,11 @@
 
 #include "commands/ClimbSolenoidCommand.h"
 
-ClimbSolenoidCommand::ClimbSolenoidCommand(ClimberSubsystem* subsystem)
-    : m_subsystem{subsystem} {}
+ClimbSolenoidCommand::ClimbSolenoidCommand(ClimberSubsystem* subsystem, bool toggledPin)
+    : m_subsystem{subsystem},
+    m_toggledPin{toggledPin} {}
 
 void ClimbSolenoidCommand::Execute()
 {
-    m_subsystem->ToggleClimberPin();
+    m_subsystem->ToggleClimberPin(m_toggledPin);
 }

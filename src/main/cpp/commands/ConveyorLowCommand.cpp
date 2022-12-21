@@ -4,7 +4,7 @@
 
 #include "commands/ConveyorLowCommand.h"
 
-ConveyorLowCommand::ConveyorLowCommand(ConveyorSubsystem* subsystem, int conveyorDirection)
+ConveyorLowCommand::ConveyorLowCommand(ConveyorSubsystem* subsystem, double conveyorDirection)
     : m_subsystem{subsystem},
     m_conveyorDirection{conveyorDirection} {}
 

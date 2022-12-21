@@ -22,10 +22,11 @@ class ClimbSolenoidCommand
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit ClimbSolenoidCommand(ClimberSubsystem* subsystem);
+  explicit ClimbSolenoidCommand(ClimberSubsystem* subsystem, bool toggledPin);
 
   void Execute() override;
 
  private:
   ClimberSubsystem* m_subsystem;
+  bool m_toggledPin;
 };

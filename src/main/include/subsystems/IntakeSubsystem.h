@@ -38,11 +38,12 @@ public:
     /**
      * Toggles the intake using m_intakePiston
      */
-    void ToggleIntakePiston();
+    void IntakePiston(bool toggled);
 
 private:
     TalonSRX m_intakeTalon;
     COREConstant<double> m_intakeSpeed;
     DoubleSolenoid m_intakeSolenoid;
     bool m_intakePiston;
+    double climberPin;
 };

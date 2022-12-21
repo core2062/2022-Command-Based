@@ -12,7 +12,7 @@ ClimberSubsystem::ClimberSubsystem() :
   // Implementation of subsystem constructor goes here.
   m_climberPin = false;
   m_climberTalon.SetNeutralMode(NeutralMode::Brake);
-  
+  // double climberPin = 1;
 }
 
 void ClimberSubsystem::Periodic() {
@@ -27,9 +27,10 @@ void ClimberSubsystem::SetClimberSpeed(double multiplier) {
   m_climberTalon.Set(ControlMode::PercentOutput,m_climberSpeed.Get()*multiplier);
 }
 
-void ClimberSubsystem::ToggleClimberPin()
+void ClimberSubsystem::ToggleClimberPin(bool toggledPin)
 {
-  if (m_climberPin)
+  // /*
+  if (toggledPin)
   {
     m_climberSolenoid.Set(DoubleSolenoid::Value::kForward);
   }
@@ -37,5 +38,18 @@ void ClimberSubsystem::ToggleClimberPin()
   {
     m_climberSolenoid.Set(DoubleSolenoid::Value::kReverse);
   }
-  m_climberPin = !m_climberPin;
+  // m_climberPin = !m_climberPin;
+// */
+/*
+  if (climberPin != 1)
+  {
+    m_climberSolenoid.Set(DoubleSolenoid::Value::kForward);
+    climberPin = 1;
+  }
+  else
+  {
+    m_climberSolenoid.Set(DoubleSolenoid::Value::kReverse);
+    climberPin = 2;
+  }
+*/
 }

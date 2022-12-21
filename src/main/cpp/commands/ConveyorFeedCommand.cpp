@@ -4,7 +4,7 @@
 
 #include "commands/ConveyorFeedCommand.h"
 
-ConveyorFeedCommand::ConveyorFeedCommand(ConveyorSubsystem* subsystem, int feedDirection)
+ConveyorFeedCommand::ConveyorFeedCommand(ConveyorSubsystem* subsystem, double feedDirection)
     : m_subsystem{subsystem},
     m_feedDirection{feedDirection} {}
 

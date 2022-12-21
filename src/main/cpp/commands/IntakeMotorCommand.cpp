@@ -4,7 +4,7 @@
 
 #include "commands/IntakeMotorCommand.h"
 
-IntakeMotorCommand::IntakeMotorCommand(IntakeSubsystem* subsystem, int intakeDirection)
+IntakeMotorCommand::IntakeMotorCommand(IntakeSubsystem* subsystem, double intakeDirection)
     : m_subsystem{subsystem},
     m_intakeDirection{intakeDirection} {}
 

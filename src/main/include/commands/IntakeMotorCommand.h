@@ -23,7 +23,7 @@ class IntakeMotorCommand
    * @param subsystem The subsystem used by this command.
    */
   explicit IntakeMotorCommand(IntakeSubsystem* subsystem,
-                               int intakeDirection);
+                               double intakeDirection);
 
   void Execute() override;
   void End(bool interrupted) override;

@@ -4,10 +4,11 @@
 
 #include "commands/IntakeSolenoidCommand.h"
 
-IntakeSolenoidCommand::IntakeSolenoidCommand(IntakeSubsystem* subsystem)
-    : m_subsystem{subsystem} {}
+IntakeSolenoidCommand::IntakeSolenoidCommand(IntakeSubsystem* subsystem, bool toggled)
+    : m_subsystem{subsystem}, 
+    m_toggled{toggled} {}
 
 void IntakeSolenoidCommand::Execute()
 {
-    m_subsystem->ToggleIntakePiston();
+    m_subsystem->IntakePiston(m_toggled);
 }

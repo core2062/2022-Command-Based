@@ -38,11 +38,12 @@ public:
   /**
    * Toggles the climber's punch using m_climberPin
    */
-  void ToggleClimberPin();
+  void ToggleClimberPin(bool toggledPin);
 
 private:
   TalonSRX m_climberTalon;
   COREConstant<double> m_climberSpeed;
   DoubleSolenoid m_climberSolenoid;
   bool m_climberPin;
+  
 };

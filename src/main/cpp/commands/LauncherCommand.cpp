@@ -4,7 +4,7 @@
 
 #include "commands/LauncherCommand.h"
 
-LauncherCommand::LauncherCommand(LauncherSubsystem* subsystem, int launcherDirection)
+LauncherCommand::LauncherCommand(LauncherSubsystem* subsystem, double launcherDirection)
     : m_subsystem{subsystem},
     m_launcherDirection{launcherDirection} {}
 

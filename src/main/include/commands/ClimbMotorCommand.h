@@ -23,7 +23,7 @@ class ClimbMotorCommand
    * @param subsystem The subsystem used by this command.
    */
   explicit ClimbMotorCommand(ClimberSubsystem* subsystem,
-                            int climberDirection);
+                            double climberDirection);
 
   void Execute() override;
   void End(bool interrupted) override;

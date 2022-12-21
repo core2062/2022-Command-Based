@@ -18,7 +18,7 @@ class ConveyorLowCommand
    * @param subsystem The subsystem used by this command.
    */
   explicit ConveyorLowCommand(ConveyorSubsystem* subsystem,
-                               int conveyorDirection);
+                               double conveyorDirection);
 
   void Execute() override;
 
