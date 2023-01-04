@@ -25,5 +25,5 @@ class ConveyorFeedCommand
 
  private:
   ConveyorSubsystem* m_subsystem;
-  int m_feedDirection;
+  double m_feedDirection;
 };

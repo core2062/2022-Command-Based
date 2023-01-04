@@ -26,7 +26,7 @@ void ConveyorSubsystem::SimulationPeriodic() {
   // Implementation of subsystem simulation periodic method goes here.
 }
 
-void ConveyorSubsystem::SetConveyorSpeed(int direction)
+void ConveyorSubsystem::SetConveyorSpeed(double direction)
 {
   if (direction == 1)
   {
@@ -40,7 +40,7 @@ void ConveyorSubsystem::SetConveyorSpeed(int direction)
   }
 }
 
-void ConveyorSubsystem::SetFeedSpeed(int direction) {
+void ConveyorSubsystem::SetFeedSpeed(double direction) {
   if (direction == 1)
   {
     m_leftFeed.Set(ControlMode::PercentOutput, conveyorFeedSpeed.Get());

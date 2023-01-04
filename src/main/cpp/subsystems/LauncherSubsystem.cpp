@@ -24,6 +24,6 @@ void LauncherSubsystem::SimulationPeriodic() {
 }
 
 void LauncherSubsystem::SetLauncherSpeed(double multiplier) {
-  m_launcherLeftTalon.Set(ControlMode::PercentOutput,m_launcherSpeed.Get()*multiplier);
+  m_launcherLeftTalon.Set(ControlMode::PercentOutput,-m_launcherSpeed.Get()*multiplier);
   m_launcherRightTalon.Set(ControlMode::PercentOutput,m_launcherSpeed.Get()*multiplier);
 }

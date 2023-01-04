@@ -30,5 +30,5 @@ class LauncherCommand
 
  private:
   LauncherSubsystem* m_subsystem;
-  int m_launcherDirection;
+  double m_launcherDirection;
 };

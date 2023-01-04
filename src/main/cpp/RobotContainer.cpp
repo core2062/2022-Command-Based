@@ -28,14 +28,14 @@ void RobotContainer::ConfigureButtonBindings() {
 
   m_driverDPadN.WhenHeld(new ClimbMotorCommand(&m_climberSubsystem,1));
   m_driverDPadS.WhenHeld(new ClimbMotorCommand(&m_climberSubsystem,-1));
-  m_driverYButton.ToggleWhenPressed(frc2::StartEndCommand([&] {new ClimbSolenoidCommand(&m_climberSubsystem, true);}, 
-                                                            [&] {new ClimbSolenoidCommand(&m_climberSubsystem, false);}));
+  m_driverYButton.WhenPressed(frc2::StartEndCommand([&] {new ClimbSolenoidCommand(&m_climberSubsystem, true);}, 
+                                                    [&] {new ClimbSolenoidCommand(&m_climberSubsystem, false);}));
 
-  m_operatorAButton.ToggleWhenPressed(frc2::StartEndCommand([&] {new IntakeSolenoidCommand(&m_intakeSubsystem, true);}, 
-                                                            [&] {new IntakeSolenoidCommand(&m_intakeSubsystem, false);}));
-  m_operatorBButton.ToggleWhenPressed(new LaunchBallCommandGroup(&m_conveyorSubsystem));
-  m_operatorRightButton.ToggleWhenPressed(new IntakeMotorCommand(&m_intakeSubsystem, 0.25));
-  m_operatorRightTrigger.ToggleWhenPressed(new IntakeMotorCommand(&m_intakeSubsystem, 0.25));
+  m_operatorAButton.WhenPressed(frc2::StartEndCommand([&] {new IntakeSolenoidCommand(&m_intakeSubsystem, true);}, 
+                                                      [&] {new IntakeSolenoidCommand(&m_intakeSubsystem, false);}));
+  m_operatorBButton.WhenPressed(new LaunchBallCommandGroup(&m_conveyorSubsystem));
+  m_operatorRightButton.WhenHeld(new IntakeMotorCommand(&m_intakeSubsystem, 0.25));
+  m_operatorRightTrigger.WhenHeld(new IntakeMotorCommand(&m_intakeSubsystem, 0.25));
   m_operatorLeftTrigger.ToggleWhenPressed(new LauncherCommand(&m_launcherSubsystem, 0.25));
 }
 

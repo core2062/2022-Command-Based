@@ -30,5 +30,5 @@ class ClimbMotorCommand
 
  private:
   ClimberSubsystem* m_subsystem;
-  int m_climberDirection;
+  double m_climberDirection;
 };

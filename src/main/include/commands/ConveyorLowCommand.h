@@ -26,5 +26,5 @@ class ConveyorLowCommand
 
  private:
   ConveyorSubsystem* m_subsystem;
-  int m_conveyorDirection;
+  double m_conveyorDirection;
 };

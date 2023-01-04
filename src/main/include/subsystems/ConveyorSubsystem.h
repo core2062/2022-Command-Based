@@ -32,13 +32,13 @@ class ConveyorSubsystem : public frc2::SubsystemBase {
    * Sets the conveyor speed
    * @param direction 1,-1, or 0; Multiplies to the speed to control the conveyor movement
    */
-  void SetConveyorSpeed(int direction);
+  void SetConveyorSpeed(double direction);
   
   /**
    * Sets the speed of the feed
    * @param direction 1,-1, or 0; Multiplies to the speed to control the conveyor movement
    */
-  void SetFeedSpeed(int direction);
+  void SetFeedSpeed(double direction);
   
   void ToggleConveyorPunch();
 

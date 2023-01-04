@@ -30,5 +30,5 @@ class IntakeMotorCommand
 
  private:
   IntakeSubsystem* m_subsystem;
-  int m_intakeDirection;
+  double m_intakeDirection;
 };

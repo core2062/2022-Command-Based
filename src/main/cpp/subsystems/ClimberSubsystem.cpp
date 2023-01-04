@@ -29,27 +29,28 @@ void ClimberSubsystem::SetClimberSpeed(double multiplier) {
 
 void ClimberSubsystem::ToggleClimberPin(bool toggledPin)
 {
-  // /*
-  if (toggledPin)
+if (toggledPin = true)
+{
+  std::cout << "Pin toggled";
+  toggledPin = false;
+}else if (toggledPin = false)
+{
+  std::cout << "Pin toggled";
+  toggledPin = true;
+}else 
+{
+  std::cout << "Pin not toggled";
+}
+
+  /*
+  if (toggledPin = true)
   {
     m_climberSolenoid.Set(DoubleSolenoid::Value::kForward);
   }
-  else
+  else if (toggledPin = false)
   {
     m_climberSolenoid.Set(DoubleSolenoid::Value::kReverse);
   }
   // m_climberPin = !m_climberPin;
-// */
-/*
-  if (climberPin != 1)
-  {
-    m_climberSolenoid.Set(DoubleSolenoid::Value::kForward);
-    climberPin = 1;
-  }
-  else
-  {
-    m_climberSolenoid.Set(DoubleSolenoid::Value::kReverse);
-    climberPin = 2;
-  }
 */
 }
